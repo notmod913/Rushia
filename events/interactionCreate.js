@@ -3,6 +3,15 @@ const Reminder = require('../database/Reminder');
 const { sendLog, sendError } = require('../utils/logger');
 const { ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const RateLimiter = require('../optimization/rateLimiter');
+const {
+  handleNameSelect,
+  handleAddName,
+  handleRemoveName,
+  handleNextSection,
+  handleSelectField,
+  handleSelectFieldValue,
+  handleFinishGenerator
+} = require('../systems/messageGeneratorSystem');
 
 
 module.exports = {
@@ -57,10 +66,25 @@ module.exports = {
                     await interaction.reply({ content: 'There was an error executing this command!', flags: 1 << 6 });
                 }
             }
+        } else if (interaction.isStringSelectMenu()) {
+            try {
+                if (await handleNameSelect(interaction)) return;
+                if (await handleSelectField(interaction)) return;
+                if (await handleSelectFieldValue(interaction)) return;
+            } catch (error) {
+                console.error('Error handling string select menu:', error);
+            }
         } else if (interaction.isButton()) {
+            try {
+                if (await handleAddName(interaction)) return;
+                if (await handleRemoveName(interaction)) return;
+                if (await handleNextSection(interaction)) return;
+                if (await handleFinishGenerator(interaction)) return;
+            } catch (error) {
+                console.error('Error handling button:', error);
+            }
+
             const { customId, user, channel, message } = interaction;
-
-
 
             if (customId.startsWith('stamina_')) {
                 const mentionedUserIdMatch = message.content.match(/<@(\d+)>/);
@@ -75,7 +99,7 @@ module.exports = {
                 const percentage = parseInt(customId.split('_')[1], 10);
                 const maxStamina = 50;
                 const staminaToRegen = (maxStamina * percentage) / 100;
-                const minutesToRegen = staminaToRegen * 2; // 5 stamina per 10 mins = 1 stamina per 2 mins
+                const minutesToRegen = staminaToRegen * 2;
                 const remindAt = new Date(Date.now() + minutesToRegen * 60 * 1000);
 
                 try {

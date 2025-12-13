@@ -55,48 +55,12 @@ for (const file of eventFiles) {
     }
 }
 
-// Load system handlers for reactions and interactions
-const { handleGeneratorReaction, handleNameSelect, handleAddName, handleRemoveName, handleNextSection, handleAddField, handleFieldSelect, handleFinishGenerator } = require('./systems/messageGeneratorSystem');
-
-
+// Load system handlers for reactions
+const { handleGeneratorReaction } = require('./systems/messageGeneratorSystem');
 
 // Handle reactions for generator system
 client.on(Events.MessageReactionAdd, async (reaction, user) => {
   await handleGeneratorReaction(reaction, user);
-});
-
-// Handle interactions for dropdowns and buttons
-client.on(Events.InteractionCreate, async (interaction) => {
-  if (!interaction.isStringSelectMenu() && !interaction.isButton()) return;
-  
-  // Prevent double-click processing
-  if (interaction.replied || interaction.deferred) return;
-  
-  try {
-    const { handleLogNavigation, handleLogFilter } = require('./commands/logs');
-    
-    const { handleHelpCategory } = require('./commands/help');
-    
-    const handled = await handleNameSelect(interaction) ||
-                   await handleAddName(interaction) ||
-                   await handleRemoveName(interaction) ||
-                   await handleNextSection(interaction) ||
-                   await handleAddField(interaction) ||
-                   await handleFieldSelect(interaction) ||
-                   await handleFinishGenerator(interaction) ||
-                   await handleLogFilter(interaction) ||
-                   await handleLogNavigation(interaction) ||
-                   await handleHelpCategory(interaction);
-  } catch (error) {
-    console.error('Interaction error:', error);
-    try {
-      if (!interaction.replied && !interaction.deferred) {
-        await interaction.reply({ content: 'An error occurred processing your request.', ephemeral: true });
-      }
-    } catch (e) {
-      // Silent fail if already replied
-    }
-  }
 });
 
 // Guild join welcome/setup guide
