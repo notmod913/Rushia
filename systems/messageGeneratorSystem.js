@@ -136,6 +136,7 @@ async function processInventoryEmbed(message) {
   if (!embed.title || !embed.title.includes('<:LU_Inventory:') || !embed.title.includes("'s Inventory")) return;
   try {
     await message.react('🔍');
+    await message.react('🆔');
   } catch (error) {
     console.error('Failed to react to inventory:', error);
   }
@@ -143,7 +144,14 @@ async function processInventoryEmbed(message) {
 
 async function handleGeneratorReaction(reaction, user) {
   if (user.bot) return;
-  if (reaction.emoji.name !== '🔍') return;
+  if (reaction.emoji.name === '🔍') {
+    await handleCommandBuilderReaction(reaction, user);
+  } else if (reaction.emoji.name === '🆔') {
+    await handleIDExtractorReaction(reaction, user);
+  }
+}
+
+async function handleCommandBuilderReaction(reaction, user) {
   const message = reaction.message;
   if (!message.embeds.length) return;
   const embed = message.embeds[0];
@@ -174,9 +182,8 @@ async function handleGeneratorReaction(reaction, user) {
     .setTitle('🛠️ Command Builder')
     .setColor(0x3498db)
     .addFields(
-      { name: '📋 Step 1: Select Cards', value: 'Choose cards from your inventory', inline: false },
-      { name: '📝 Command Preview', value: `\`<@${LUVI_BOT_ID}> inv\``, inline: false },
-      { name: '🎯 Selected Cards', value: 'None', inline: false }
+      { name: '🔍 Currently Selected', value: 'None', inline: true },
+      { name: '📝 Command', value: `\`<@${LUVI_BOT_ID}> inv\``, inline: true }
     );
   try {
     const dropdownMessage = await message.channel.send({
@@ -189,6 +196,39 @@ async function handleGeneratorReaction(reaction, user) {
     startInventoryWatcher(user.id, message);
   } catch (error) {
     console.error('Failed to send generator message:', error);
+  }
+}
+
+async function handleIDExtractorReaction(reaction, user) {
+  const message = reaction.message;
+  if (!message.embeds.length) return;
+  const embed = message.embeds[0];
+  if (!embed.title || !embed.title.includes('<:LU_Inventory:') || !embed.title.includes("'s Inventory")) return;
+  const usernameMatch = embed.title.match(/<:LU_Inventory:[^>]+>\s*(.+?)'s Inventory/);
+  if (!usernameMatch) return;
+  const inventoryUsername = usernameMatch[1];
+  if (user.username !== inventoryUsername) return;
+  try {
+    await reaction.users.remove(user);
+    await reaction.users.remove(reaction.client.user);
+  } catch (error) {
+    console.error('Failed to remove reactions:', error);
+  }
+  const cards = parseInventoryEmbed(embed);
+  if (!cards.length) return;
+  generatorData.set(`idextractor_${user.id}`, {
+    cards,
+    allIds: cards.map(card => card.id),
+    inventoryMessageId: message.id,
+    inventoryChannelId: message.channel.id
+  });
+  const idList = cards.map(card => card.id).join(',');
+  try {
+    const idMessage = await message.channel.send(idList || 'No cards');
+    generatorData.set(`idmessage_${user.id}`, idMessage);
+    startIDWatcher(user.id, message);
+  } catch (error) {
+    console.error('Failed to send ID list:', error);
   }
 }
 
@@ -215,15 +255,13 @@ async function handleNameSelect(interaction) {
       });
       const dropdown = createNameDropdown(userData.cards, userId);
       const actionButtons = createNameActionButtons(userId, false);
-      const selectedText = userData.selectedNames.join(', ');
       const commandPreview = buildCommandPreview(userData);
       const embed = new EmbedBuilder()
         .setTitle('🛠️ Command Builder')
         .setColor(0x3498db)
         .addFields(
-          { name: '📋 Step 1: Select Cards', value: 'Choose cards from your inventory', inline: false },
-          { name: '📝 Command Preview', value: `\`${commandPreview}\``, inline: false },
-          { name: '🎯 Selected Cards', value: selectedText, inline: false }
+          { name: '🔍 Currently Selected', value: 'All Added', inline: true },
+          { name: '📝 Command', value: `\`${commandPreview}\``, inline: true }
         );
       await interaction.editReply({ embeds: [embed], components: [dropdown, actionButtons] });
       return true;
@@ -233,15 +271,13 @@ async function handleNameSelect(interaction) {
     userData.currentSelection = selectedCard;
     const dropdown = createNameDropdown(userData.cards, userId);
     const actionButtons = createNameActionButtons(userId, true);
-    const selectedText = userData.selectedNames.length > 0 ? userData.selectedNames.join(', ') : 'None';
     const commandPreview = buildCommandPreview(userData);
     const embed = new EmbedBuilder()
       .setTitle('🛠️ Command Builder')
       .setColor(0x3498db)
       .addFields(
-        { name: '📋 Step 1: Select Cards', value: 'Choose cards from your inventory', inline: false },
-        { name: '📝 Command Preview', value: `\`${commandPreview}\``, inline: false },
-        { name: '🎯 Selected Cards', value: selectedText, inline: false }
+        { name: '🔍 Currently Selected', value: `**${selectedCard.name}**`, inline: true },
+        { name: '📝 Command', value: `\`${commandPreview}\``, inline: true }
       );
     await interaction.editReply({ embeds: [embed], components: [dropdown, actionButtons] });
     return true;
@@ -270,15 +306,13 @@ async function handleAddName(interaction) {
   }
   const dropdown = createNameDropdown(userData.cards, userId);
   const actionButtons = createNameActionButtons(userId, true);
-  const selectedText = userData.selectedNames.join(', ');
   const commandPreview = buildCommandPreview(userData);
   const embed = new EmbedBuilder()
     .setTitle('🛠️ Command Builder')
     .setColor(0x3498db)
     .addFields(
-      { name: '📋 Step 1: Select Cards', value: 'Choose cards from your inventory', inline: false },
-      { name: '📝 Command Preview', value: `\`${commandPreview}\``, inline: false },
-      { name: '🎯 Selected Cards', value: selectedText, inline: false }
+      { name: '🔍 Currently Selected', value: `**${userData.currentSelection.name}**`, inline: true },
+      { name: '📝 Command', value: `\`${commandPreview}\``, inline: true }
     );
   await interaction.editReply({ embeds: [embed], components: [dropdown, actionButtons] });
   return true;
@@ -301,15 +335,13 @@ async function handleRemoveName(interaction) {
   userData.selectedNames = userData.selectedNames.filter(name => name !== cardName);
   const dropdown = createNameDropdown(userData.cards, userId);
   const actionButtons = createNameActionButtons(userId, true);
-  const selectedText = userData.selectedNames.length > 0 ? userData.selectedNames.join(', ') : 'None';
   const commandPreview = buildCommandPreview(userData);
   const embed = new EmbedBuilder()
     .setTitle('🛠️ Command Builder')
     .setColor(0x3498db)
     .addFields(
-      { name: '📋 Step 1: Select Cards', value: 'Choose cards from your inventory', inline: false },
-      { name: '📝 Command Preview', value: `\`${commandPreview}\``, inline: false },
-      { name: '🎯 Selected Cards', value: selectedText, inline: false }
+      { name: '🔍 Currently Selected', value: `**${userData.currentSelection.name}**`, inline: true },
+      { name: '📝 Command', value: `\`${commandPreview}\``, inline: true }
     );
   await interaction.editReply({ embeds: [embed], components: [dropdown, actionButtons] });
   return true;
@@ -329,7 +361,6 @@ async function handleNextSection(interaction) {
     return true;
   }
   const fieldDropdown = createFieldSelectionDropdown(userId, userData.selectedFields);
-  const selectedText = userData.selectedNames.length > 0 ? userData.selectedNames.join(', ') : 'None';
   const commandPreview = buildCommandPreview(userData);
   const fieldsText = formatSelectedFields(userData.selectedFields);
   
@@ -343,9 +374,8 @@ async function handleNextSection(interaction) {
     .setTitle('🛠️ Command Builder')
     .setColor(0x27ae60)
     .addFields(
-      { name: '📝 Command Preview', value: `\`${commandPreview}\``, inline: false },
-      { name: '🎯 Selected Cards', value: selectedText, inline: false },
-      { name: '⚙️ Selected Fields', value: fieldsText, inline: false }
+      { name: '📝 Command', value: `\`${commandPreview}\``, inline: false },
+      { name: '⚙️ Fields', value: fieldsText, inline: false }
     );
   await interaction.editReply({ embeds: [embed], components });
   return true;
@@ -404,7 +434,6 @@ async function handleSelectFieldValue(interaction) {
     const mainMessage = generatorData.get(`main_message_${userId}`);
     if (mainMessage) {
       const fieldDropdown = createFieldSelectionDropdown(userId, userData.selectedFields);
-      const selectedText = userData.selectedNames.length > 0 ? userData.selectedNames.join(', ') : 'None';
       const commandPreview = buildCommandPreview(userData);
       const fieldsText = formatSelectedFields(userData.selectedFields);
       
@@ -418,9 +447,8 @@ async function handleSelectFieldValue(interaction) {
         .setTitle('🛠️ Command Builder')
         .setColor(0x27ae60)
         .addFields(
-          { name: '📝 Command Preview', value: `\`${commandPreview}\``, inline: false },
-          { name: '🎯 Selected Cards', value: selectedText, inline: false },
-          { name: '⚙️ Selected Fields', value: fieldsText, inline: false }
+          { name: '📝 Command', value: `\`${commandPreview}\``, inline: false },
+          { name: '⚙️ Fields', value: fieldsText, inline: false }
         );
       
       await mainMessage.edit({ embeds: [mainEmbed], components });
@@ -478,21 +506,49 @@ function startInventoryWatcher(userId, inventoryMessage) {
         if (mainMessage) {
           const dropdown = createNameDropdown(newCards, userId);
           const actionButtons = createNameActionButtons(userId, userData.currentSelection !== null);
-          const selectedText = userData.selectedNames.length > 0 ? userData.selectedNames.join(', ') : 'None';
           const commandPreview = buildCommandPreview(userData);
           const updateEmbed = new EmbedBuilder()
             .setTitle('🛠️ Command Builder')
             .setColor(0x3498db)
             .addFields(
-              { name: '📋 Step 1: Select Cards', value: 'Choose cards from your inventory', inline: false },
-              { name: '📝 Command Preview', value: `\`${commandPreview}\``, inline: false },
-              { name: '🎯 Selected Cards', value: selectedText, inline: false }
+              { name: '🔍 Currently Selected', value: userData.currentSelection ? `**${userData.currentSelection.name}**` : 'None', inline: true },
+              { name: '📝 Command', value: `\`${commandPreview}\``, inline: true }
             );
           await mainMessage.edit({ embeds: [updateEmbed], components: [dropdown, actionButtons] });
         }
       }
     } catch (error) {
       console.error('Error in inventory watcher:', error);
+      clearInterval(checkInterval);
+    }
+  }, 2000);
+  setTimeout(() => clearInterval(checkInterval), 10 * 60 * 1000);
+}
+
+function startIDWatcher(userId, inventoryMessage) {
+  const checkInterval = setInterval(async () => {
+    const userData = generatorData.get(`idextractor_${userId}`);
+    if (!userData) {
+      clearInterval(checkInterval);
+      return;
+    }
+    try {
+      const channel = await inventoryMessage.client.channels.fetch(userData.inventoryChannelId);
+      const message = await channel.messages.fetch(userData.inventoryMessageId);
+      if (!message.embeds.length) return;
+      const embed = message.embeds[0];
+      const newCards = parseInventoryEmbed(embed);
+      if (JSON.stringify(newCards) !== JSON.stringify(userData.cards)) {
+        const newIds = newCards.filter(card => !userData.allIds.includes(card.id)).map(card => card.id);
+        userData.cards = newCards;
+        userData.allIds.push(...newIds);
+        const idMessage = generatorData.get(`idmessage_${userId}`);
+        if (idMessage) {
+          await idMessage.edit(userData.allIds.join(',') || 'No cards');
+        }
+      }
+    } catch (error) {
+      console.error('Error in ID watcher:', error);
       clearInterval(checkInterval);
     }
   }, 2000);
