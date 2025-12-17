@@ -79,23 +79,7 @@ client.on(Events.GuildCreate, async (guild) => {
     }
 
     const guideMessage = `
-**Hello! Thanks for adding Luvi Helper Bot!**
-
-**Setup Commands:**
-1️⃣ **Boss Role:** \`/set-boss-role role:@Role\`
-2️⃣ **Card Role:** \`/set-card-role role:@Role\`
-3️⃣ **View Config:** \`/view-settings\`
-4️⃣ **User Settings:** \`/notifications set\`
-
-**Features:**
-• Boss spawn notifications (all tiers)
-• Card spawn notifications (all rarities)
-• Stamina reminders (auto 100%)
-• Expedition reminders
-• Raid fatigue reminders
-
-Use \`/help\` for detailed setup guide.
-`;
+**Hello! Thanks for adding Rushia!**`;
 
     await defaultChannel.send(guideMessage);
     await sendLog(`Sent setup guide message in guild ${guild.name}`, { guildId: guild.id });
