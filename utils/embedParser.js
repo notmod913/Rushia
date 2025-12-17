@@ -127,12 +127,36 @@ function parseRaidViewEmbed(embed) {
 }
 
 function parseRaidSpawnEmbed(embed) {
-  if (!embed || !embed.title) return null;
+  if (!embed) return null;
   
-  // Check if title contains "Raid Spawned!"
-  if (!embed.title.includes('Raid Spawned!')) return null;
+  let foundYouSpawned = false;
   
-  return { raidSpawned: true };
+  try {
+    if (embed.title?.includes('You spawned')) foundYouSpawned = true;
+  } catch (e) {}
+  
+  try {
+    if (embed.description?.includes('You spawned')) foundYouSpawned = true;
+  } catch (e) {}
+  
+  try {
+    if (embed.fields) {
+      for (const field of embed.fields) {
+        if (field.name?.includes('You spawned') || field.value?.includes('You spawned')) {
+          foundYouSpawned = true;
+          break;
+        }
+      }
+    }
+  } catch (e) {}
+  
+  if (!foundYouSpawned) return null;
+  
+  const footer = embed.footer?.text || '';
+  const raidIdMatch = footer.match(/Raid ID:\s*(\d+)/);
+  if (!raidIdMatch) return null;
+  
+  return { raidSpawned: true, raidId: raidIdMatch[1] };
 }
 
 module.exports = {
