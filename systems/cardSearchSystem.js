@@ -46,7 +46,8 @@ function createCardEmbed(card) {
       { name: 'Element', value: card.element, inline: true },
       { name: 'Role', value: card.role, inline: true }
     )
-    .setImage(card.image_url);
+    .setImage(card.image_url)
+    .setFooter({ text: '✨ = Iconic' });
   
   return embed;
 }
@@ -61,7 +62,8 @@ function createResultsEmbed(results, userId, page = 0) {
   const embed = new EmbedBuilder()
     .setTitle(`Found ${results.length} results`)
     .setDescription(`Page ${page + 1}/${totalPages} - Reply with the number to select:`)
-    .setColor(0xffff00);
+    .setColor(0xffff00)
+    .setFooter({ text: '✨ = Iconic' });
   
   for (let i = 0; i < pageResults.length; i++) {
     const card = pageResults[i];
@@ -138,7 +140,8 @@ module.exports = {
       
       const embed = new EmbedBuilder()
         .setTitle(`📋 Search Results (${allResults.length} queries)`)
-        .setColor(0x00ff00);
+        .setColor(0x00ff00)
+        .setFooter({ text: '✨ = Iconic' });
       
       for (const result of allResults) {
         if (result.card) {
@@ -176,7 +179,8 @@ module.exports = {
       const noResultsEmbed = new EmbedBuilder()
         .setTitle('❌ No Results')
         .setDescription('No cards found matching your search.')
-        .setColor(0xff0000);
+        .setColor(0xff0000)
+        .setFooter({ text: '✨ = Iconic' });
       await loadingMsg.edit({ embeds: [noResultsEmbed] });
       return;
     }
@@ -219,7 +223,8 @@ module.exports = {
       const errorEmbed = new EmbedBuilder()
         .setTitle('❌ Invalid Selection')
         .setDescription('Please choose a valid number.')
-        .setColor(0xff0000);
+        .setColor(0xff0000)
+        .setFooter({ text: '✨ = Iconic' });
       await message.reply({ embeds: [errorEmbed] });
       return true;
     }
