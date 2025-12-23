@@ -15,7 +15,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Vladilena-Milize.png",
         "id": 2,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Accelerator",
@@ -33,7 +33,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Misaka-Mikoto.png",
         "id": 4,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Itsuomi Nagi",
@@ -69,7 +69,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Akame.png",
         "id": 8,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Bulat",
@@ -96,7 +96,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Esdeath.png",
         "id": 11,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Kurome",
@@ -222,7 +222,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Ivan.png",
         "id": 25,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Luka",
@@ -276,7 +276,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Kanade-Tachibana.png",
         "id": 31,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Yui",
@@ -384,7 +384,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Koro-Sensei.png",
         "id": 43,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Nagisa Shiota",
@@ -411,7 +411,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Eren-Yeager.png",
         "id": 46,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Hange Zoe",
@@ -429,7 +429,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Levi-Ackerman.png",
         "id": 48,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Mikasa Ackerman",
@@ -438,7 +438,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Mikasa-Ackerman.png",
         "id": 49,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Zeke Yeager",
@@ -456,7 +456,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Maple.png",
         "id": 51,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Luca",
@@ -483,7 +483,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Griffith.png",
         "id": 54,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Guts",
@@ -492,7 +492,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Guts.png",
         "id": 55,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Ciel Phantomhive",
@@ -501,7 +501,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Ciel-Phantomhive.png",
         "id": 56,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Grell Sutcliff",
@@ -519,7 +519,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Sebastian-Michaelis.png",
         "id": 58,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Undertaker",
@@ -537,7 +537,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Asta.png",
         "id": 60,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Dante Zogratis",
@@ -663,7 +663,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Yami-Sukehiro.png",
         "id": 74,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Yuno",
@@ -699,7 +699,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Ichigo-Kurosaki.png",
         "id": 78,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Kenpachi Zaraki",
@@ -753,7 +753,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Sosuke-Aizen.png",
         "id": 84,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Toshiro Hitsugaya",
@@ -780,7 +780,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Yoruichi-Shihoin.png",
         "id": 87,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Chain Sumeragi",
@@ -978,7 +978,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Meguru-Bachira.png",
         "id": 109,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Rensuke Kunigami",
@@ -1050,7 +1050,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Yoichi-Isagi.png",
         "id": 117,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Hitori Gotoh",
@@ -1059,7 +1059,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Hitori-Gotoh.png",
         "id": 118,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Ikuyo Kita",
@@ -1122,7 +1122,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Blade.png",
         "id": 125,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Levia",
@@ -1203,7 +1203,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Osamu-Dazai.png",
         "id": 134,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Ryuunosuke Akutagawa",
@@ -1230,7 +1230,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Mai-Sakurajima.png",
         "id": 137,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Rio Futaba",
@@ -1275,7 +1275,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Nazuna-Nanakusa.png",
         "id": 142,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Himari Inuzaka",
@@ -1302,7 +1302,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Kinomoto-Sakura.png",
         "id": 145,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Kinomoto Touya",
@@ -1410,7 +1410,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Denji.png",
         "id": 157,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Himeno",
@@ -1437,7 +1437,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Makima.png",
         "id": 160,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Pochita",
@@ -1455,7 +1455,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Power.png",
         "id": 162,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Reze",
@@ -1509,7 +1509,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Arisu-Sakayanagi.png",
         "id": 168,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Ichinose Honami",
@@ -1545,7 +1545,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Kiyotaka-Ayanokoji.png",
         "id": 172,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Rokusuke Koenji",
@@ -1563,7 +1563,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Suzune-Horikita.png",
         "id": 174,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "C.C.",
@@ -1572,7 +1572,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/C.C..png",
         "id": 175,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Kallen Kozuki",
@@ -1590,7 +1590,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Lelouch-Lamperouge.png",
         "id": 177,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Masaomi Heike",
@@ -1635,7 +1635,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Spike-Spiegel.png",
         "id": 182,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "David Martinez",
@@ -1662,7 +1662,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Lucy.png",
         "id": 185,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Rebecca",
@@ -1734,7 +1734,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Hestia.png",
         "id": 193,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Liliruca Arde",
@@ -1806,7 +1806,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Ken-Takakura.png",
         "id": 201,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Momo Ayase",
@@ -1815,7 +1815,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Momo-Ayase.png",
         "id": 202,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Seiko Ayase",
@@ -1914,7 +1914,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Junko-Enoshima.png",
         "id": 213,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Kaede Akamatsu",
@@ -1995,7 +1995,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Monokuma.png",
         "id": 222,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Nagito Komaeda",
@@ -2067,7 +2067,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Zero-Two.png",
         "id": 230,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Kaguya Yamai",
@@ -2094,7 +2094,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Kurumi-Tokisaki.png",
         "id": 233,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Mayuri",
@@ -2202,7 +2202,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/L.png",
         "id": 245,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Light Yagami",
@@ -2211,7 +2211,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Light-Yagami.png",
         "id": 246,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Mello",
@@ -2364,7 +2364,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Muzan-Kibutsuji.png",
         "id": 263,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Nezuko Kamado",
@@ -2373,7 +2373,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Nezuko-Kamado.png",
         "id": 264,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Obanai Iguro",
@@ -2409,7 +2409,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Tanjiro-Kamado.png",
         "id": 268,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Tengen Uzui",
@@ -2445,7 +2445,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Vergil.png",
         "id": 272,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Lekismon",
@@ -2499,7 +2499,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Monika.png",
         "id": 278,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Natsuki",
@@ -2535,7 +2535,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Hayase-Nagatoro.png",
         "id": 282,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Doom Slayer",
@@ -2544,7 +2544,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Doom-Slayer.png",
         "id": 283,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Zephyr",
@@ -2616,7 +2616,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Frieza.png",
         "id": 291,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Future Trunks",
@@ -2679,7 +2679,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Son-Goku.png",
         "id": 298,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Vegeta",
@@ -2688,7 +2688,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Vegeta.png",
         "id": 299,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Vegito",
@@ -2751,7 +2751,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Kayden.png",
         "id": 306,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Re-L Mayer",
@@ -2769,7 +2769,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Erza-Scarlet.png",
         "id": 308,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Flare Corona",
@@ -2850,7 +2850,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Natsu-Dragneel.png",
         "id": 317,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Zeref",
@@ -2877,7 +2877,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Archer.png",
         "id": 320,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Arthur Pendragon (Prototype)",
@@ -2895,7 +2895,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Astolfo.png",
         "id": 322,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Berserker",
@@ -2931,7 +2931,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Gilgamesh.png",
         "id": 326,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Goetia",
@@ -3039,7 +3039,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Mash-Kyrielight.png",
         "id": 338,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Medusa",
@@ -3093,7 +3093,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Rin-Tohsaka.png",
         "id": 344,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Saber",
@@ -3102,7 +3102,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Saber.png",
         "id": 345,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Saber (Alter)",
@@ -3111,7 +3111,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Saber--Alter.png",
         "id": 346,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Sakura Matou",
@@ -3120,7 +3120,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Sakura-Matou.png",
         "id": 347,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Scathach",
@@ -3183,7 +3183,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Cloud-Strife.png",
         "id": 354,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Lightning",
@@ -3210,7 +3210,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Sephiroth.png",
         "id": 357,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Tifa Lockhart",
@@ -3219,7 +3219,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Tifa-Lockhart.png",
         "id": 358,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Celica",
@@ -3246,7 +3246,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Fern.png",
         "id": 361,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Frieren",
@@ -3255,7 +3255,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Frieren.png",
         "id": 362,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Himmel",
@@ -3300,7 +3300,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Rudo-Surebrec.png",
         "id": 367,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Zanka Nijiku",
@@ -3318,7 +3318,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Albedo.png",
         "id": 369,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Alhaitham",
@@ -3345,7 +3345,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Arlecchino.png",
         "id": 372,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Barbara",
@@ -3489,7 +3489,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Ganyu.png",
         "id": 388,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Hu Tao",
@@ -3498,7 +3498,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Hu-Tao.png",
         "id": 389,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Jean",
@@ -3588,7 +3588,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Mavuika.png",
         "id": 399,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Mona",
@@ -3606,7 +3606,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Nahida.png",
         "id": 401,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Navia",
@@ -3660,7 +3660,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Raiden-Shogun.png",
         "id": 407,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Sangonomiya Kokomi",
@@ -3759,7 +3759,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Yae-Miko.png",
         "id": 418,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Yelan",
@@ -3786,7 +3786,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Zhongli.png",
         "id": 421,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Gintoki Sakata",
@@ -3795,7 +3795,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Gintoki-Sakata.png",
         "id": 422,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Kagura",
@@ -3849,7 +3849,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Goblin-Slayer.png",
         "id": 428,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Priestess",
@@ -3867,7 +3867,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Kratos.png",
         "id": 430,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Asirpa",
@@ -3948,7 +3948,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Kamina.png",
         "id": 439,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Nia Teppelin",
@@ -3966,7 +3966,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Simon.png",
         "id": 441,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Yoko Littner",
@@ -3975,7 +3975,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Yoko-Littner.png",
         "id": 442,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Kei Tsukishima",
@@ -4011,7 +4011,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Shoyo-Hinata.png",
         "id": 446,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Tetsurou Kuroo",
@@ -4074,7 +4074,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Ippo-Makunouchi.png",
         "id": 453,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Mamoru Takamura",
@@ -4137,7 +4137,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Akeno-Himejima.png",
         "id": 460,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Asia Argento",
@@ -4182,7 +4182,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Koneko-Toujou.png",
         "id": 465,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Kuroka",
@@ -4209,7 +4209,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Rias-Gremory.png",
         "id": 468,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Rossweisse",
@@ -4335,7 +4335,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Gawr-Gura.png",
         "id": 482,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Hakos Baelz",
@@ -4362,7 +4362,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Hoshimachi-Suisei.png",
         "id": 485,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Houshou Marine",
@@ -4389,7 +4389,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Inugami-Korone.png",
         "id": 488,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Kiara Takanashi",
@@ -4524,7 +4524,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Sakura-Miko.png",
         "id": 503,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Shiori Novella",
@@ -4542,7 +4542,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Shirakami-Fubuki.png",
         "id": 505,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Shiranui Flare",
@@ -4623,7 +4623,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Usada-Pekora.png",
         "id": 514,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Yukihana Lamy",
@@ -4650,7 +4650,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Elysia.png",
         "id": 517,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Fu Hua",
@@ -4677,7 +4677,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Kiana-Kaslana.png",
         "id": 520,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Raiden Mei",
@@ -4686,7 +4686,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Raiden-Mei.png",
         "id": 521,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Acheron",
@@ -4695,7 +4695,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Acheron.png",
         "id": 522,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Aglaea",
@@ -4740,7 +4740,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Blade.png",
         "id": 527,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Boothill",
@@ -4812,7 +4812,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Firefly.png",
         "id": 535,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Fu Xuan",
@@ -4875,7 +4875,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Kafka.png",
         "id": 542,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Lingsha",
@@ -4920,7 +4920,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Robin.png",
         "id": 547,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Ruan Mei",
@@ -5019,7 +5019,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Izumi-Miyamura.png",
         "id": 558,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Kakeru Sengoku",
@@ -5037,7 +5037,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Kyouko-Hori.png",
         "id": 560,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Remi Ayasaki",
@@ -5100,7 +5100,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Howl.png",
         "id": 567,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Sophie Hatter",
@@ -5154,7 +5154,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Gon-Freecss.png",
         "id": 573,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Hisoka Morow",
@@ -5163,7 +5163,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Hisoka-Morow.png",
         "id": 574,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Illumi Zoldyck",
@@ -5190,7 +5190,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Killua-Zoldyck.png",
         "id": 577,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Kite",
@@ -5280,7 +5280,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Inuyasha.png",
         "id": 587,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Sesshoumaru",
@@ -5298,7 +5298,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Truck-Kun.png",
         "id": 589,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Akane Sakuramori",
@@ -5343,7 +5343,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Gojo-Satoru.png",
         "id": 594,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Jogo",
@@ -5379,7 +5379,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Mahoraga.png",
         "id": 598,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Maki Zenin",
@@ -5433,7 +5433,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Sukuna.png",
         "id": 604,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Toge Inumaki",
@@ -5460,7 +5460,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Yuji-Itadori.png",
         "id": 607,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Yuuta Okkotsu",
@@ -5469,7 +5469,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Yuuta-Okkotsu.png",
         "id": 608,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Suchan Jang",
@@ -5523,7 +5523,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Yui-Hirasawa.png",
         "id": 614,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Chihiro Rokuhira",
@@ -5550,7 +5550,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Chika-Fujiwara.png",
         "id": 617,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Kaguya Shinomiya",
@@ -5559,7 +5559,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Kaguya-Shinomiya.png",
         "id": 618,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Miko Iino",
@@ -5649,7 +5649,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Yumeko-Jabami.png",
         "id": 628,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Hayato Gokudera",
@@ -5739,7 +5739,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Ryuko-Matoi.png",
         "id": 638,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Satsuki Kiryuin",
@@ -5775,7 +5775,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Komi-Shouko.png",
         "id": 642,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Tadano Hitohito",
@@ -5793,7 +5793,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Aqua.png",
         "id": 644,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Darkness",
@@ -5829,7 +5829,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Megumin.png",
         "id": 648,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Wiz",
@@ -5874,7 +5874,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Jinu.png",
         "id": 653,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Mira",
@@ -5910,7 +5910,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Rumi.png",
         "id": 657,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Zoey",
@@ -5991,7 +5991,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Ahri.png",
         "id": 666,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Akali",
@@ -6000,7 +6000,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Akali.png",
         "id": 667,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Caitlyn",
@@ -6045,7 +6045,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Jinx.png",
         "id": 672,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Katarina",
@@ -6243,7 +6243,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Sylus.png",
         "id": 694,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Xavier",
@@ -6270,7 +6270,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Rikka-Takanashi.png",
         "id": 697,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Yuuta Togashi",
@@ -6342,7 +6342,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Arcueid-Brunestud.png",
         "id": 705,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Ciel",
@@ -6387,7 +6387,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Takina-Inoue.png",
         "id": 710,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Nanachi",
@@ -6432,7 +6432,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Deadpool.png",
         "id": 715,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Magik",
@@ -6477,7 +6477,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Mash-Burnedead.png",
         "id": 720,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Elma",
@@ -6504,7 +6504,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Kanna-Kamui.png",
         "id": 723,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Lucoa",
@@ -6522,7 +6522,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Tohru.png",
         "id": 725,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Jiang Cheng",
@@ -6567,7 +6567,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Wei-Wuxian.png",
         "id": 730,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Shigeo Kageyama",
@@ -6576,7 +6576,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Shigeo-Kageyama.png",
         "id": 731,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Leon Fou Bartfort",
@@ -6603,7 +6603,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Hitagi-Senjougahara.png",
         "id": 734,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Karen Araragi",
@@ -6648,7 +6648,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Shinobu-Oshino.png",
         "id": 739,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Suruga Kanbaru",
@@ -6873,7 +6873,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Roxy-Migurdia.png",
         "id": 764,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Rudeus Greyrat",
@@ -6900,7 +6900,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Marin-Kitagawa.png",
         "id": 767,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Kiyoka Kudo",
@@ -6999,7 +6999,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Himiko-Toga.png",
         "id": 778,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Izuku Midoriya",
@@ -7008,7 +7008,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Izuku-Midoriya.png",
         "id": 779,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Katsuki Bakugou",
@@ -7017,7 +7017,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Katsuki-Bakugou.png",
         "id": 780,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Kyoka Jirou",
@@ -7116,7 +7116,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Tomura-Shigaraki.png",
         "id": 791,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Tsuyu Asui",
@@ -7161,7 +7161,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/OmgKawaiiAngel.png",
         "id": 796,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Cheon Yeo Woon",
@@ -7206,7 +7206,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Hinata-Hyuga.png",
         "id": 801,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Ino Yamanaka",
@@ -7224,7 +7224,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Itachi-Uchiha.png",
         "id": 803,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Jiraiya",
@@ -7242,7 +7242,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Kakashi-Hatake.png",
         "id": 805,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Kisame Hoshigaki",
@@ -7269,7 +7269,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Madara-Uchiha.png",
         "id": 808,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Minato Namikaze",
@@ -7287,7 +7287,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Naruto-Uzumaki.png",
         "id": 810,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Obito Uchiha",
@@ -7341,7 +7341,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Sasuke-Uchiha.png",
         "id": 816,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Shikamaru Nara",
@@ -7386,7 +7386,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Asuka-Langley.png",
         "id": 821,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Gendou Ikari",
@@ -7413,7 +7413,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Rei-Ayanami.png",
         "id": 824,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Ritsuko Akagi",
@@ -7440,7 +7440,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/2B.png",
         "id": 827,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "9S",
@@ -7575,7 +7575,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Rapi.png",
         "id": 842,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Red Hood",
@@ -7692,7 +7692,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Han-Sooyoung.png",
         "id": 855,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Jang Hayoung",
@@ -7719,7 +7719,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Kim-Dokja.png",
         "id": 858,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Kyrgios Rodgraim",
@@ -7818,7 +7818,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Yoo-Joonghyuk.png",
         "id": 869,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Yoo Sangah",
@@ -7845,7 +7845,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Sunny.png",
         "id": 872,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Arlong",
@@ -7863,7 +7863,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Boa-Hancock.png",
         "id": 874,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Brook",
@@ -7962,7 +7962,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Monkey-D.-Luffy.png",
         "id": 885,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Nami",
@@ -7971,7 +7971,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Nami.png",
         "id": 886,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Nico Robin",
@@ -8007,7 +8007,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Roronoa-Zoro.png",
         "id": 890,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Sabo",
@@ -8034,7 +8034,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Shanks.png",
         "id": 893,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Silvers Rayleigh",
@@ -8097,7 +8097,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Boros.png",
         "id": 900,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Fubuki",
@@ -8115,7 +8115,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Garou.png",
         "id": 902,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Genos",
@@ -8142,7 +8142,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Saitama.png",
         "id": 905,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Tatsumaki",
@@ -8169,7 +8169,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Yukino-Yukinoshita.png",
         "id": 908,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Ai Hoshino",
@@ -8178,7 +8178,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Ai-Hoshino.png",
         "id": 909,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Akane Kurokawa",
@@ -8241,7 +8241,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Ainz.png",
         "id": 916,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Albedo",
@@ -8250,7 +8250,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Albedo.png",
         "id": 917,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Antilene",
@@ -8286,7 +8286,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Shalltear-Bloodfallen.png",
         "id": 921,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Ashe",
@@ -8412,7 +8412,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Tracer.png",
         "id": 935,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Venture",
@@ -8475,7 +8475,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Joker.png",
         "id": 942,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Oracle",
@@ -8574,7 +8574,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Takane-Takamine.png",
         "id": 953,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Ash Ketchum",
@@ -8583,7 +8583,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Ash-Ketchum.png",
         "id": 954,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Charizard",
@@ -8592,7 +8592,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Charizard.png",
         "id": 955,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Pikachu",
@@ -8601,7 +8601,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Pikachu.png",
         "id": 956,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Team Rocket",
@@ -8826,7 +8826,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Madoka-Kaname.png",
         "id": 981,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Mami Tomoe",
@@ -8853,7 +8853,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Bianca.png",
         "id": 984,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Liv",
@@ -8961,7 +8961,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Emilia.png",
         "id": 996,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Felix Argyle",
@@ -8997,7 +8997,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Rem.png",
         "id": 1000,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Subaru Natsuki",
@@ -9033,7 +9033,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Chizuru-Ichinose.png",
         "id": 1004,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Mami Nanami",
@@ -9114,7 +9114,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Alisa-Mikhailovna-Kujou.png",
         "id": 1013,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Ayano Kimishima",
@@ -9258,7 +9258,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Sailor-Moon.png",
         "id": 1029,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Andromeda Shun",
@@ -9456,7 +9456,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Senko.png",
         "id": 1051,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Yumi",
@@ -9537,7 +9537,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Meliodas.png",
         "id": 1060,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Merlin",
@@ -9636,7 +9636,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Sunraku.png",
         "id": 1071,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Koshi Anko",
@@ -9681,7 +9681,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Miyako-Shikimori.png",
         "id": 1076,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Arc",
@@ -9735,7 +9735,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Kumoko.png",
         "id": 1082,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Sophia Keren",
@@ -9771,7 +9771,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Holo.png",
         "id": 1086,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Chihiro Ogino",
@@ -9807,7 +9807,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Anya-Forger.png",
         "id": 1090,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Bond Forger",
@@ -9843,7 +9843,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Yor-Forger.png",
         "id": 1094,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Kurisu Makise",
@@ -9852,7 +9852,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Kurisu-Makise.png",
         "id": 1095,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Mayuri Shiina",
@@ -9915,7 +9915,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Alice-Zuberg.png",
         "id": 1102,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Argo",
@@ -9933,7 +9933,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Asuna.png",
         "id": 1104,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Bercouli",
@@ -9960,7 +9960,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Kirito.png",
         "id": 1107,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Klein",
@@ -10014,7 +10014,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Sinon.png",
         "id": 1113,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Yui",
@@ -10068,7 +10068,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Destiny.png",
         "id": 1119,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Takt Asahina",
@@ -10167,7 +10167,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Rimuru-Tempest.png",
         "id": 1130,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Shion",
@@ -10212,7 +10212,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Mahiru-Shiina.png",
         "id": 1135,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Jinshi",
@@ -10230,7 +10230,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Maomao.png",
         "id": 1137,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Arthur Leywin",
@@ -10239,7 +10239,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Arthur-Leywin.png",
         "id": 1138,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Jasmine Flamesworth",
@@ -10284,7 +10284,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Noe-Archiviste.png",
         "id": 1143,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Vanitas",
@@ -10293,7 +10293,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Vanitas.png",
         "id": 1144,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Mori Buntarou",
@@ -10329,7 +10329,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Siesta.png",
         "id": 1148,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Emi Yusa",
@@ -10356,7 +10356,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Kusuo-Saiki.png",
         "id": 1151,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Shun Kaidou",
@@ -10419,7 +10419,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Cid-Kagenou.png",
         "id": 1158,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Claire Kagenou",
@@ -10437,7 +10437,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Delta.png",
         "id": 1160,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Epsilon",
@@ -10536,7 +10536,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Yuno-Gasai.png",
         "id": 1171,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Araya Souren",
@@ -10590,7 +10590,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Senko.png",
         "id": 1177,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Shiro (Senko-san)",
@@ -10635,7 +10635,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Link.png",
         "id": 1182,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Midna",
@@ -10653,7 +10653,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Zelda.png",
         "id": 1184,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Anos Voldigoad",
@@ -10662,7 +10662,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Anos-Voldigoad.png",
         "id": 1185,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Misha Necron",
@@ -10698,7 +10698,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Miku-Nakano.png",
         "id": 1189,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Nino Nakano",
@@ -10734,7 +10734,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Naofumi-Iwatani.png",
         "id": 1193,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Raphtalia",
@@ -10743,7 +10743,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Raphtalia.png",
         "id": 1194,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Beastlain",
@@ -10788,7 +10788,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Hua-Cheng.png",
         "id": 1199,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Shi Qingxuan",
@@ -10806,7 +10806,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Xie-Lian.png",
         "id": 1201,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Dragon Boy",
@@ -10860,7 +10860,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/X.png",
         "id": 1207,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Aoi Akane",
@@ -10878,7 +10878,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Hanako.png",
         "id": 1209,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Kou Minamoto",
@@ -10932,7 +10932,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Kaneki-Ken.png",
         "id": 1215,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Rize Kamishiro",
@@ -10986,7 +10986,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Manjiro-Sano.png",
         "id": 1221,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Takemichi Hanagaki",
@@ -11076,7 +11076,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Reimu-Hakurei.png",
         "id": 1231,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Reisen Udongein Inaba",
@@ -11103,7 +11103,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Sakuya-Izayoi.png",
         "id": 1234,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Youmu Konpaku",
@@ -11175,7 +11175,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Khun-Aguero-Agnes.png",
         "id": 1242,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Maschenny Zahard",
@@ -11193,7 +11193,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Twenty-Fifth-Bam.png",
         "id": 1244,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Urek Mazino",
@@ -11283,7 +11283,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Gold-Ship.png",
         "id": 1254,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Haru Urara",
@@ -11382,7 +11382,7 @@
         "role": "Frontline",
         "image_url": "https://luvi-game.com/images/luvi-common/Seraphina.png",
         "id": 1265,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Baku Madarame",
@@ -11409,7 +11409,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Ado.png",
         "id": 1268,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Kasane Teto",
@@ -11472,7 +11472,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Thorfinn.png",
         "id": 1275,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Thorkell",
@@ -11490,7 +11490,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Violet-Evergarden.png",
         "id": 1277,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Akita Neru",
@@ -11508,7 +11508,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Hatsune-Miku.png",
         "id": 1279,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Kagamine Len",
@@ -11562,7 +11562,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Elaina.png",
         "id": 1285,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Eleonora",
@@ -11616,7 +11616,7 @@
         "role": "Duelist",
         "image_url": "https://luvi-game.com/images/luvi-common/Haruka-Sakura.png",
         "id": 1291,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Hayato Suo",
@@ -11787,7 +11787,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Camellya.png",
         "id": 1310,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Cantarella",
@@ -11814,7 +11814,7 @@
         "role": "Mastermind",
         "image_url": "https://luvi-game.com/images/luvi-common/Cartethyia.png",
         "id": 1313,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Changli",
@@ -12012,7 +12012,7 @@
         "role": "Support",
         "image_url": "https://luvi-game.com/images/luvi-common/Shorekeeper.png",
         "id": 1335,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Taoqi",
@@ -12057,7 +12057,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Yinlin.png",
         "id": 1340,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Youhu",
@@ -12174,7 +12174,7 @@
         "role": "Phantom",
         "image_url": "https://luvi-game.com/images/luvi-common/Jane-Doe.png",
         "id": 1353,
-        "is_iconic": false
+        "is_iconic": true
     },
     {
         "name": "Lucia",
