@@ -16,6 +16,7 @@ const { initializeSettings } = require('./utils/settingsManager');
 const { initializeUserSettings } = require('./utils/userSettingsManager');
 const DatabaseManager = require('./database/database');
 const { sendLog, sendError, initializeLogsDB } = require('./utils/logger');
+const { handleCardInventorySystem } = require('./systems/cardInventorySystem');
 
 const client = new Client({
   intents: [
@@ -58,7 +59,7 @@ for (const file of eventFiles) {
 // Load system handlers for reactions
 const { handleGeneratorReaction } = require('./systems/messageGeneratorSystem');
 
-// Handle reactions for generator system
+// Handle reactions for generator system and card rarity system
 client.on(Events.MessageReactionAdd, async (reaction, user) => {
   await handleGeneratorReaction(reaction, user);
 });
@@ -142,6 +143,7 @@ async function deployCommands(client) {
         await initializeSettings();
         await initializeUserSettings();
         startScheduler(readyClient);
+        handleCardInventorySystem(readyClient);
         
         const activities = [
           { name: 'boss spawns', type: ActivityType.Watching },
