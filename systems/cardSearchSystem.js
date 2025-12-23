@@ -36,8 +36,9 @@ function searchCards(query) {
 }
 
 function createCardEmbed(card) {
+  const cardName = card.is_iconic ? `✨ ${card.name}` : card.name;
   const embed = new EmbedBuilder()
-    .setTitle(card.name)
+    .setTitle(cardName)
     .setColor(0x00ff00)
     .addFields(
       { name: 'Series', value: card.series, inline: true },
@@ -57,8 +58,9 @@ function createResultsEmbed(results, userId) {
   
   for (let i = 0; i < Math.min(results.length, 10); i++) {
     const card = results[i];
+    const cardName = card.is_iconic ? `✨ ${card.name}` : card.name;
     embed.addFields({
-      name: `${i + 1}. ${card.name}`,
+      name: `${i + 1}. ${cardName}`,
       value: `${card.series} | ${card.element} ${card.role}`,
       inline: false
     });
@@ -99,9 +101,10 @@ module.exports = {
       
       for (const result of allResults) {
         if (result.card) {
+          const cardName = result.card.is_iconic ? `✨ ${result.card.name}` : result.card.name;
           embed.addFields({
             name: `✅ ${result.query}`,
-            value: `**${result.card.name}**\n${result.card.series} | ${result.card.element} ${result.card.role}`,
+            value: `**${cardName}**\n${result.card.series} | ${result.card.element} ${result.card.role}`,
             inline: false
           });
         } else {
