@@ -12,6 +12,7 @@ const {
   handleSelectFieldValue,
   handleFinishGenerator
 } = require('../systems/messageGeneratorSystem');
+const { handlePagination } = require('../systems/cardSearchSystem');
 
 
 module.exports = {
@@ -80,6 +81,7 @@ module.exports = {
                 if (await handleRemoveName(interaction)) return;
                 if (await handleNextSection(interaction)) return;
                 if (await handleFinishGenerator(interaction)) return;
+                if (await handlePagination(interaction)) return;
             } catch (error) {
                 console.error('Error handling button:', error);
             }
