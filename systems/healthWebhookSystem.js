@@ -73,24 +73,18 @@ async function postOrEditEmbed() {
     const payload = { embeds: [embed.toJSON()] };
     
     if (!messageId) {
-      const response = await fetch(webhookUrl, {
+      const response = await fetch(`${webhookUrl}?wait=true`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
       
       if (!response.ok) {
-        console.error('Webhook post failed:', response.status, await response.text());
+        console.error('Webhook post failed:', response.status);
         return;
       }
       
-      const text = await response.text();
-      if (!text) {
-        console.error('Empty response from webhook');
-        return;
-      }
-      
-      const data = JSON.parse(text);
+      const data = await response.json();
       messageId = data.id;
       console.log('Health webhook posted:', messageId);
     } else {
@@ -105,7 +99,7 @@ async function postOrEditEmbed() {
       });
       
       if (!response.ok) {
-        console.error('Webhook edit failed:', response.status, await response.text());
+        console.error('Webhook edit failed:', response.status);
         messageId = null;
       }
     }
