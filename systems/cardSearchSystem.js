@@ -1,4 +1,4 @@
-const { EmbedBuilder } = require('discord.js');
+const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
 
@@ -13,6 +13,7 @@ try {
 
 // Store search results for user selection
 const userSearches = new Map();
+const paginationStates = new Map();
 
 function searchCards(query) {
   const terms = query.toLowerCase().split(' ');
@@ -50,24 +51,64 @@ function createCardEmbed(card) {
   return embed;
 }
 
-function createResultsEmbed(results, userId) {
+function createResultsEmbed(results, userId, page = 0) {
+  const itemsPerPage = 10;
+  const totalPages = Math.ceil(results.length / itemsPerPage);
+  const start = page * itemsPerPage;
+  const end = start + itemsPerPage;
+  const pageResults = results.slice(start, end);
+  
   const embed = new EmbedBuilder()
     .setTitle(`Found ${results.length} results`)
-    .setDescription('Reply with the number to select:')
+    .setDescription(`Page ${page + 1}/${totalPages} - Reply with the number to select:`)
     .setColor(0xffff00);
   
-  for (let i = 0; i < Math.min(results.length, 10); i++) {
-    const card = results[i];
+  for (let i = 0; i < pageResults.length; i++) {
+    const card = pageResults[i];
     const cardName = card.is_iconic ? `✨ ${card.name}` : card.name;
+    const actualIndex = start + i + 1;
     embed.addFields({
-      name: `${i + 1}. ${cardName}`,
+      name: `${actualIndex}. ${cardName}`,
       value: `${card.series} | ${card.element} ${card.role}`,
       inline: false
     });
   }
   
   userSearches.set(userId, results);
+  paginationStates.set(userId, { page, totalPages });
   return embed;
+}
+
+function createPaginationButtons(userId, page, totalPages) {
+  const row = new ActionRowBuilder();
+  
+  if (page > 0) {
+    row.addComponents(
+      new ButtonBuilder()
+        .setCustomId(`prev_${userId}`)
+        .setLabel('← Previous')
+        .setStyle(ButtonStyle.Primary)
+    );
+  }
+  
+  row.addComponents(
+    new ButtonBuilder()
+      .setCustomId(`page_info_${userId}`)
+      .setLabel(`${page + 1}/${totalPages}`)
+      .setStyle(ButtonStyle.Secondary)
+      .setDisabled(true)
+  );
+  
+  if (page < totalPages - 1) {
+    row.addComponents(
+      new ButtonBuilder()
+        .setCustomId(`next_${userId}`)
+        .setLabel('Next →')
+        .setStyle(ButtonStyle.Primary)
+    );
+  }
+  
+  return row;
 }
 
 module.exports = {
@@ -144,8 +185,9 @@ module.exports = {
       const embed = createCardEmbed(results[0]);
       await loadingMsg.edit({ embeds: [embed] });
     } else {
-      const embed = createResultsEmbed(results, message.author.id);
-      await loadingMsg.edit({ embeds: [embed] });
+      const embed = createResultsEmbed(results, message.author.id, 0);
+      const buttons = createPaginationButtons(message.author.id, 0, Math.ceil(results.length / 10));
+      await loadingMsg.edit({ embeds: [embed], components: [buttons] });
     }
   },
   
@@ -156,31 +198,54 @@ module.exports = {
     
     if (!userSearches.has(userId)) return false;
     
-    // Show loading for selection
-    const loadingEmbed = new EmbedBuilder()
-      .setTitle('⚡ Loading Card...')
-      .setDescription('```\n░░░▓▓▓▓▓░░ Loading card details...\n```')
-      .setColor(0x808080);
-    
-    const loadingMsg = await message.reply({ embeds: [loadingEmbed] });
-    
-    await new Promise(resolve => setTimeout(resolve, 300));
-    
     const results = userSearches.get(userId);
     
     if (selection >= 1 && selection <= results.length) {
+      const loadingEmbed = new EmbedBuilder()
+        .setTitle('⚡ Loading Card...')
+        .setDescription('```\n░░░▓▓▓▓▓░░ Loading card details...\n```')
+        .setColor(0x808080);
+      
+      const loadingMsg = await message.reply({ embeds: [loadingEmbed] });
+      await new Promise(resolve => setTimeout(resolve, 300));
+      
       const card = results[selection - 1];
       const embed = createCardEmbed(card);
-      await loadingMsg.edit({ embeds: [embed] });
+      await loadingMsg.edit({ embeds: [embed], components: [] });
       userSearches.delete(userId);
+      paginationStates.delete(userId);
       return true;
     } else {
       const errorEmbed = new EmbedBuilder()
         .setTitle('❌ Invalid Selection')
         .setDescription('Please choose a valid number.')
         .setColor(0xff0000);
-      await loadingMsg.edit({ embeds: [errorEmbed] });
+      await message.reply({ embeds: [errorEmbed] });
       return true;
     }
+  },
+  
+  // Handle pagination buttons
+  handlePagination: async (interaction) => {
+    const userId = interaction.user.id;
+    const customId = interaction.customId;
+    
+    if (!customId.includes(userId)) return false;
+    
+    const results = userSearches.get(userId);
+    const state = paginationStates.get(userId);
+    
+    if (!results || !state) return false;
+    
+    let newPage = state.page;
+    if (customId.startsWith('next_')) newPage++;
+    else if (customId.startsWith('prev_')) newPage--;
+    else return false;
+    
+    const embed = createResultsEmbed(results, userId, newPage);
+    const buttons = createPaginationButtons(userId, newPage, state.totalPages);
+    
+    await interaction.update({ embeds: [embed], components: [buttons] });
+    return true;
   }
 };
