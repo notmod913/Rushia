@@ -70,21 +70,29 @@ async function postOrEditEmbed() {
   
   try {
     const embed = await createStatusEmbed();
+    const payload = { embeds: [embed.toJSON()] };
     
     if (!messageId) {
       const response = await fetch(webhookUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ embeds: [embed.toJSON()] })
+        body: JSON.stringify(payload)
       });
       
       if (!response.ok) {
-        console.error('Webhook post failed:', response.status);
+        console.error('Webhook post failed:', response.status, await response.text());
         return;
       }
       
-      const data = await response.json();
+      const text = await response.text();
+      if (!text) {
+        console.error('Empty response from webhook');
+        return;
+      }
+      
+      const data = JSON.parse(text);
       messageId = data.id;
+      console.log('Health webhook posted:', messageId);
     } else {
       const webhookParts = webhookUrl.split('/');
       const webhookId = webhookParts[webhookParts.length - 2];
@@ -93,11 +101,12 @@ async function postOrEditEmbed() {
       const response = await fetch(`https://discord.com/api/webhooks/${webhookId}/${webhookToken}/messages/${messageId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ embeds: [embed.toJSON()] })
+        body: JSON.stringify(payload)
       });
       
       if (!response.ok) {
-        console.error('Webhook edit failed:', response.status);
+        console.error('Webhook edit failed:', response.status, await response.text());
+        messageId = null;
       }
     }
   } catch (error) {
