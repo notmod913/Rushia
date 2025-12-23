@@ -14,37 +14,10 @@ function getUptimeString() {
   return `${days}d ${hours}h ${minutes}m`;
 }
 
-async function getRailwayStatus() {
-  if (!process.env.RAILWAY_API_TOKEN || !process.env.RAILWAY_PROJECT_ID) return 'Unknown';
-  
-  try {
-    const response = await fetch('https://api.railway.app/graphql', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.RAILWAY_API_TOKEN}`
-      },
-      body: JSON.stringify({
-        query: `query { project(id: "${process.env.RAILWAY_PROJECT_ID}") { deployments(first: 1) { edges { node { status } } } } }`
-      })
-    });
-
-    if (!response.ok) return 'Unknown';
-    const data = await response.json();
-    
-    if (data.errors) return 'Unknown';
-    const status = data.data?.project?.deployments?.edges?.[0]?.node?.status;
-    return status || 'Unknown';
-  } catch (error) {
-    return 'Unknown';
-  }
-}
-
 async function createStatusEmbed() {
   const uptime = getUptimeString();
   const memUsage = (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2);
   const memMax = (process.memoryUsage().heapTotal / 1024 / 1024).toFixed(2);
-  const railwayStatus = await getRailwayStatus();
   const ping = client ? client.ws.ping : 0;
   
   const embed = new EmbedBuilder()
@@ -56,7 +29,6 @@ async function createStatusEmbed() {
       { name: 'Ping', value: `${ping}ms`, inline: true },
       { name: 'Memory', value: `${memUsage} MB / ${memMax} MB`, inline: true },
       { name: 'Commands Used', value: commandCount.toString(), inline: true },
-      { name: 'Deployment', value: railwayStatus, inline: true },
       { name: 'Database', value: '✅ Connected', inline: true },
       { name: 'Last Updated', value: new Date().toLocaleString(), inline: false }
     )
