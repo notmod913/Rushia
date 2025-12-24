@@ -69,6 +69,8 @@ module.exports = {
             }
         } else if (interaction.isStringSelectMenu()) {
             try {
+                const { handleHelpCategory } = require('../commands/help');
+                if (await handleHelpCategory(interaction)) return;
                 if (await handleNameSelect(interaction)) return;
                 if (await handleSelectField(interaction)) return;
                 if (await handleSelectFieldValue(interaction)) return;
