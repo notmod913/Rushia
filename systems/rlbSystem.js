@@ -179,7 +179,7 @@ async function handleBackButton(interaction) {
 
     const button = new ButtonBuilder()
       .setCustomId('view_rarity_drops')
-      .setLabel('View Rarity Drops')
+      .setLabel('Rare Drops')
       .setStyle(ButtonStyle.Primary)
       .setEmoji('💎');
 
