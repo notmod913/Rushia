@@ -1,10 +1,12 @@
 const { Events } = require('discord.js');
 const { processBossMessage } = require('../systems/tierPingSystem');
-const { processCardMessage } = require('../systems/cardPingSystem');
 const { processStaminaMessage } = require('../systems/staminaReminderSystem');
 const { processExpeditionMessage } = require('../systems/expeditionReminderSystem');
 const { processRaidMessage } = require('../systems/raidReminderSystem');
 const { processRaidSpawnMessage } = require('../systems/raidSpawnReminderSystem');
+const { processDropMessage } = require('../systems/dropSystem');
+const { processRarityDrop } = require('../systems/rarityDropSystem');
+const { processDropCount } = require('../systems/dropCountSystem');
 const { processInventoryMessage: processGeneratorMessage } = require('../systems/messageGeneratorSystem');
 const { LUVI_BOT_ID } = require('../config/constants');
 const CacheManager = require('../optimization/cache');
@@ -17,6 +19,7 @@ module.exports = {
         // Handle bot mentions for card search and logs
         if (!message.author.bot && message.mentions.has(client.user)) {
             const content = message.content.replace(`<@${client.user.id}>`, '').trim();
+            console.log(`[MENTION] User: ${message.author.tag}, Content: "${content}"`);
             
             if (content.toLowerCase() === 'logs') {
                 const { handleLogsCommand } = require('../commands/logs');
@@ -41,6 +44,12 @@ module.exports = {
                 const args = content.toLowerCase().split(' ');
                 const filter = args[1] || null;
                 await handleReminderView(message, filter);
+                return;
+            }
+            
+            if (content.toLowerCase() === 'rlb') {
+                const { handleRlbCommand } = require('../systems/rlbSystem');
+                await handleRlbCommand(message);
                 return;
             }
             
@@ -70,8 +79,10 @@ module.exports = {
         await processExpeditionMessage(message);
         await processRaidMessage(message);
         await processRaidSpawnMessage(message);
+        await processDropMessage(message);
+        await processRarityDrop(message);
+        await processDropCount(message);
         await processBossMessage(message);
-        await processCardMessage(message);
         await processGeneratorMessage(message);
     }
 };

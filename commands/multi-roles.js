@@ -5,15 +5,15 @@ const { BOT_OWNER_ID } = require('../config/constants');
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('multi-roles')
-    .setDescription('Enable or disable multi-role system for bosses and cards')
+    .setDescription('Enable or disable multi-role system for boss tiers')
     .addSubcommand(subcommand =>
       subcommand
         .setName('enable')
-        .setDescription('Enable multi-role system (separate roles for each tier/rarity)'))
+        .setDescription('Enable multi-role system (separate roles for each tier)'))
     .addSubcommand(subcommand =>
       subcommand
         .setName('disable')
-        .setDescription('Disable multi-role system (use single role for all bosses/cards)'))
+        .setDescription('Disable multi-role system (use single role for all bosses)'))
     .addSubcommand(subcommand =>
       subcommand
         .setName('set-boss')
@@ -30,25 +30,6 @@ module.exports = {
         .addRoleOption(option =>
           option.setName('role')
             .setDescription('Role to ping for this tier')
-            .setRequired(false)))
-    .addSubcommand(subcommand =>
-      subcommand
-        .setName('set-card')
-        .setDescription('Set role for a specific card rarity')
-        .addStringOption(option =>
-          option.setName('rarity')
-            .setDescription('Card rarity')
-            .setRequired(true)
-            .addChoices(
-              { name: 'Common', value: 'common' },
-              { name: 'Uncommon', value: 'uncommon' },
-              { name: 'Rare', value: 'rare' },
-              { name: 'Exotic', value: 'exotic' },
-              { name: 'Legendary', value: 'legendary' }
-            ))
-        .addRoleOption(option =>
-          option.setName('role')
-            .setDescription('Role to ping for this rarity')
             .setRequired(false))),
 
   async execute(interaction) {
@@ -76,7 +57,7 @@ module.exports = {
       await settings.save();
       
       return interaction.reply({
-        content: '✅ Multi-role system enabled! Use `/multi-roles set-boss` and `/multi-roles set-card` to configure roles for each tier/rarity.',
+        content: '✅ Multi-role system enabled! Use `/multi-roles set-boss` to configure roles for each tier.',
         ephemeral: true
       });
     }
@@ -86,7 +67,7 @@ module.exports = {
       await settings.save();
       
       return interaction.reply({
-        content: '✅ Multi-role system disabled! Bot will use single roles set via `/set-boss-role` and `/set-card-role`.',
+        content: '✅ Multi-role system disabled! Bot will use single role set via `/set-boss-role`.',
         ephemeral: true
       });
     }
@@ -114,34 +95,6 @@ module.exports = {
       } else {
         return interaction.reply({
           content: `✅ ${tier.toUpperCase()} boss role removed`,
-          ephemeral: true
-        });
-      }
-    }
-
-    if (subcommand === 'set-card') {
-      if (!settings.multiRoleEnabled) {
-        return interaction.reply({
-          content: '❌ Multi-role system is not enabled! Use `/multi-roles enable` first.',
-          ephemeral: true
-        });
-      }
-
-      const rarity = interaction.options.getString('rarity');
-      const role = interaction.options.getRole('role');
-      
-      const fieldName = `${rarity}RoleId`;
-      settings[fieldName] = role ? role.id : null;
-      await settings.save();
-
-      if (role) {
-        return interaction.reply({
-          content: `✅ ${rarity.charAt(0).toUpperCase() + rarity.slice(1)} card role set to ${role}`,
-          ephemeral: true
-        });
-      } else {
-        return interaction.reply({
-          content: `✅ ${rarity.charAt(0).toUpperCase() + rarity.slice(1)} card role removed`,
           ephemeral: true
         });
       }

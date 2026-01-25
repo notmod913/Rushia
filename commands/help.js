@@ -18,7 +18,6 @@ const helpCategories = {
     description: '*Requires Manage Roles permission*',
     fields: [
       { name: '/set-boss-role [role]', value: 'Set role to ping for all boss spawns (all tiers)' },
-      { name: '/set-card-role [role]', value: 'Set role to ping for all card spawns (all rarities)' },
       { name: '/view-settings', value: 'View current server configuration' }
     ]
   },
@@ -55,7 +54,6 @@ const helpCategories = {
     description: 'Features that work automatically in the background',
     fields: [
       { name: 'Boss Detection', value: 'Auto-detects all tier boss spawns from Luvi bot' },
-      { name: 'Card Detection', value: 'Auto-detects all rarity card spawns from Luvi bot' },
       { name: 'Inventory Detection', value: 'Auto-reacts to inventory embeds with 📦 and 🔍' },
       { name: 'Smart Reminders', value: 'Automatically sets reminders when you:\n• Run out of stamina (100-minute reminder)\n• Send cards on expeditions (completion reminders)\n• Get raid fatigue (recovery reminders)\n• Spawn a raid (30-minute reminder)' }
     ]

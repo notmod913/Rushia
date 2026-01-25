@@ -81,6 +81,16 @@ module.exports = {
             }
         } else if (interaction.isButton()) {
             try {
+                const { handleRarityButton, handleBackButton } = require('../systems/rlbSystem');
+                if (interaction.customId === 'view_rarity_drops') {
+                    await handleRarityButton(interaction);
+                    return;
+                }
+                if (interaction.customId === 'back_to_drops') {
+                    await handleBackButton(interaction);
+                    return;
+                }
+                
                 const { handleReminderInteraction } = require('../utils/reminderViewer');
                 if (await handleReminderInteraction(interaction)) return;
                 if (await handleAddName(interaction)) return;

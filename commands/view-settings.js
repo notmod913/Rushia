@@ -5,7 +5,7 @@ const { BOT_OWNER_ID, COLORS } = require('../config/constants');
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('view-settings')
-    .setDescription('View current boss tier and card ping roles'),
+    .setDescription('View current boss tier ping roles'),
 
   async execute(interaction) {
     if (!interaction.inGuild()) {
@@ -45,21 +45,12 @@ module.exports = {
         description += '**Boss Roles:**\n';
         description += `• Tier 1: ${settings.tier1RoleId ? `<@&${settings.tier1RoleId}>` : '❌ Not set'}\n`;
         description += `• Tier 2: ${settings.tier2RoleId ? `<@&${settings.tier2RoleId}>` : '❌ Not set'}\n`;
-        description += `• Tier 3: ${settings.tier3RoleId ? `<@&${settings.tier3RoleId}>` : '❌ Not set'}\n\n`;
-        
-        description += '**Card Roles:**\n';
-        description += `• Common: ${settings.commonRoleId ? `<@&${settings.commonRoleId}>` : '❌ Not set'}\n`;
-        description += `• Uncommon: ${settings.uncommonRoleId ? `<@&${settings.uncommonRoleId}>` : '❌ Not set'}\n`;
-        description += `• Rare: ${settings.rareRoleId ? `<@&${settings.rareRoleId}>` : '❌ Not set'}\n`;
-        description += `• Exotic: ${settings.exoticRoleId ? `<@&${settings.exoticRoleId}>` : '❌ Not set'}\n`;
-        description += `• Legendary: ${settings.legendaryRoleId ? `<@&${settings.legendaryRoleId}>` : '❌ Not set'}`;
+        description += `• Tier 3: ${settings.tier3RoleId ? `<@&${settings.tier3RoleId}>` : '❌ Not set'}`;
       } else {
         // Show single roles
         const bossRole = settings.bossRoleId ? `<@&${settings.bossRoleId}>` : '❌ Not set';
-        const cardRole = settings.cardPingId ? `<@&${settings.cardPingId}>` : '❌ Not set';
         
-        description += `**Boss Role (All Tiers):** ${bossRole}\n`;
-        description += `**Card Role (All Rarities):** ${cardRole}`;
+        description += `**Boss Role (All Tiers):** ${bossRole}`;
       }
 
       const embed = {

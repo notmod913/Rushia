@@ -213,3 +213,16 @@ async function deployCommands(client) {
     process.exit(1);
   }
 })();
+
+// Global error handlers to prevent crashes
+process.on('unhandledRejection', (error) => {
+  console.error('[UNHANDLED REJECTION]', error);
+});
+
+process.on('uncaughtException', (error) => {
+  console.error('[UNCAUGHT EXCEPTION]', error);
+});
+
+client.on('error', (error) => {
+  console.error('[CLIENT ERROR]', error);
+});

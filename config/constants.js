@@ -26,10 +26,9 @@ module.exports = {
     WARNING: 0xffaa00
   },
   
-  RARITIES: ['all', 'common', 'uncommon', 'rare', 'exotic', 'legendary'],
   TIERS: ['t1', 't2', 't3'],
   
-  REMINDER_TYPES: ['expedition', 'stamina', 'raid'],
+  REMINDER_TYPES: ['expedition', 'stamina', 'raid', 'raidSpawn', 'drop'],
   
   PERMISSIONS: {
     ADMIN_COMMANDS: ['ManageRoles'],

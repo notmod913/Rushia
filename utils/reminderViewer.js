@@ -10,14 +10,15 @@ async function handleReminderView(message, filterArg = null) {
     }
     
     if (!filterArg) {
-        return message.reply('Usage: `@bot rem <filter>`\nFilters: `e` (expedition), `s` (stamina), `r` (raid), `rs` (raid spawn), `@user`, or `user_id`');
+        return message.reply('Usage: `@bot rem <filter>`\nFilters: `e` (expedition), `s` (stamina), `r` (raid), `rs` (raid spawn), `d` (drop), `@user`, or `user_id`');
     }
     
     const filterMap = {
         'e': 'expedition',
         's': 'stamina',
         'r': 'raid',
-        'rs': 'raidSpawn'
+        'rs': 'raidSpawn',
+        'd': 'drop'
     };
     
     let targetUserId = null;
@@ -31,7 +32,7 @@ async function handleReminderView(message, filterArg = null) {
     } else if (filterMap[filterArg]) {
         initialFilter = filterMap[filterArg];
     } else {
-        return message.reply('Invalid filter. Use: `e`, `s`, `r`, `rs`, `@user`, or `user_id`');
+        return message.reply('Invalid filter. Use: `e`, `s`, `r`, `rs`, `d`, `@user`, or `user_id`');
     }
     
     let reminders = await Reminder.find({}).sort({ userId: 1, remindAt: 1 });
@@ -98,7 +99,8 @@ async function sendReminderPage(message, sessionId, interaction = null) {
         expedition: '🗺️',
         stamina: '⚡',
         raid: '⚔️',
-        raidSpawn: '🔔'
+        raidSpawn: '🔔',
+        drop: '🎴'
     };
 
     const embed = new EmbedBuilder()
@@ -147,7 +149,8 @@ async function sendReminderPage(message, sessionId, interaction = null) {
                 { label: 'Expedition', value: 'expedition', emoji: '🗺️' },
                 { label: 'Stamina', value: 'stamina', emoji: '⚡' },
                 { label: 'Raid', value: 'raid', emoji: '⚔️' },
-                { label: 'Raid Spawn', value: 'raidSpawn', emoji: '🔔' }
+                { label: 'Raid Spawn', value: 'raidSpawn', emoji: '🔔' },
+                { label: 'Drop', value: 'drop', emoji: '🎴' }
             ])
     );
 
