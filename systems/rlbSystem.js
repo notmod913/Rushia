@@ -50,7 +50,8 @@ async function handleRlbCommand(message) {
       .setCustomId('reset_drops')
       .setLabel('Reset')
       .setStyle(ButtonStyle.Danger)
-      .setEmoji('🔄');
+      .setEmoji('🔄')
+      .setDisabled(!isOwner && !message.member.permissions.has(PermissionFlagsBits.Administrator));
 
     const components = [rarityButton, resetButton];
 
@@ -103,7 +104,8 @@ async function handleRarityButton(interaction) {
         .setCustomId('reset_drops')
         .setLabel('Reset')
         .setStyle(ButtonStyle.Danger)
-        .setEmoji('🔄');
+        .setEmoji('🔄')
+        .setDisabled(true);
 
       const row = new ActionRowBuilder().addComponents(backButton, resetButton);
 
@@ -194,9 +196,9 @@ async function handleResetButton(interaction) {
   try {
     const BOT_OWNER_ID = process.env.BOT_OWNER_ID;
     
-    // Only bot owner can reset
-    if (interaction.user.id !== BOT_OWNER_ID) {
-      return interaction.reply({ content: '❌ Only the bot owner can reset the leaderboard.', ephemeral: true });
+    // Only bot owner or admin can reset
+    if (interaction.user.id !== BOT_OWNER_ID && !interaction.member.permissions.has(PermissionFlagsBits.Administrator)) {
+      return interaction.reply({ content: '❌ Only the bot owner or server administrators can reset the leaderboard.', ephemeral: true });
     }
 
     const guildId = interaction.guild.id;
