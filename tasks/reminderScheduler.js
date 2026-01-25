@@ -93,8 +93,16 @@ async function checkReminders(client) {
             await sendLog(`[REMINDER] Cannot DM user - permissions denied`, {
               category: 'REMINDER',
               userId: reminderData.userId,
-              error: 'CANNOT_DM',
-              code: 50007
+              error: 'CANNOT_DM'
+            });
+          } else if (error.code === 50013) {
+            const channel = await client.channels.fetch(reminderData.channelId).catch(() => null);
+            const guild = channel?.guild;
+            await sendLog(`[REMINDER] Missing permissions for #${channel?.name || reminderData.channelId} in ${guild?.name || 'Unknown Server'}`, {
+              category: 'REMINDER',
+              channelId: reminderData.channelId,
+              guildId: reminderData.guildId,
+              error: 'MISSING_PERMISSIONS'
             });
           } else {
             await sendError(`[REMINDER] Failed to send: ${error.message}`, {

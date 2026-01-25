@@ -61,6 +61,18 @@ module.exports = {
             }
         }
         
+        // Handle prefix commands
+        if (!message.author.bot && message.content.startsWith('r')) {
+            const args = message.content.slice(1).trim().split(/\s+/);
+            const command = args[0]?.toLowerCase();
+            
+            if (command === 'lb') {
+                const { handleRlbCommand } = require('../systems/rlbSystem');
+                await handleRlbCommand(message);
+                return;
+            }
+        }
+        
         // Handle card search number selection
         if (!message.author.bot && message.content.match(/^\d+$/)) {
             const cardSearch = require('../systems/cardSearchSystem');
