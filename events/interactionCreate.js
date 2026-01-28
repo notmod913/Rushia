@@ -82,15 +82,15 @@ module.exports = {
         } else if (interaction.isButton()) {
             try {
                 const { handleRarityButton, handleBackButton, handleResetButton, handleConfirmReset, handleCancelReset } = require('../systems/rlbSystem');
-                if (interaction.customId === 'view_rarity_drops') {
+                if (interaction.customId.startsWith('view_rarity_drops_')) {
                     await handleRarityButton(interaction);
                     return;
                 }
-                if (interaction.customId === 'back_to_drops') {
+                if (interaction.customId.startsWith('back_to_drops_')) {
                     await handleBackButton(interaction);
                     return;
                 }
-                if (interaction.customId === 'reset_drops') {
+                if (interaction.customId.startsWith('reset_drops_')) {
                     await handleResetButton(interaction);
                     return;
                 }

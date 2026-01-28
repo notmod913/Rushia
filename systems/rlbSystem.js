@@ -23,31 +23,37 @@ async function handleRlbCommand(message) {
     const totalDrops = allDroppers.reduce((sum, user) => sum + user.drop_count, 0);
 
     // Build leaderboard embed
+    const totalParticipants = allDroppers.length;
+    
     const embed = new EmbedBuilder()
       .setAuthor({ 
         name: message.guild.name, 
         iconURL: message.guild.iconURL({ dynamic: true }) 
       })
       .setTitle('🎴 Drop Leaderboard')
-      .setColor(0x0099ff)
-      .setFooter({ text: `Total Drops: ${totalDrops}${isOwner ? ` | Showing ${limit}/${allDroppers.length}` : ''}` })
-      .setTimestamp();
+      .setThumbnail('https://cdn.discordapp.com/attachments/1446564927983849593/1466067284530434181/image0.gif')
+      .setColor(0x0099ff);
 
-    embed.addFields(
-      { name: 'S.No', value: topDroppers.map((_, i) => `\`${i + 1}\``).join('\n\n'), inline: true },
-      { name: 'User', value: topDroppers.map(u => `<@${u.userId}>`).join('\n\n'), inline: true },
-      { name: 'Drops', value: topDroppers.map(u => `\`${u.drop_count}\``).join('\n\n'), inline: true }
-    );
+    let rankings = '`S.No` • `Drops` • `User`\n';
+    const maxDrops = Math.max(...topDroppers.map(u => u.drop_count));
+    const maxWidth = Math.max(maxDrops.toString().length, 5);
+    for (let i = 0; i < topDroppers.length; i++) {
+      const user = topDroppers[i];
+      const rank = `${i + 1}]`.padEnd(4, ' ');
+      const drops = user.drop_count.toString().padStart(maxWidth, ' ');
+      rankings += `\`${rank}\` • \`${drops}\` • <@${user.userId}>\n`;
+    }
+    embed.addFields({ name: '\u200b', value: rankings });
+    embed.setFooter({ text: `Participants: ${totalParticipants} | Total Drops: ${totalDrops}` });
 
     // Add buttons
     const rarityButton = new ButtonBuilder()
-      .setCustomId('view_rarity_drops')
+      .setCustomId(`view_rarity_drops_${message.author.id}`)
       .setLabel('Rare Drops')
-      .setStyle(ButtonStyle.Primary)
-      .setEmoji('💎');
+      .setStyle(ButtonStyle.Primary);
 
     const resetButton = new ButtonBuilder()
-      .setCustomId('reset_drops')
+      .setCustomId(`reset_drops_${message.author.id}`)
       .setLabel('Reset')
       .setStyle(ButtonStyle.Danger)
       .setEmoji('🔄')
@@ -76,6 +82,11 @@ async function handleRlbCommand(message) {
 
 async function handleRarityButton(interaction) {
   try {
+    const allowedUserId = interaction.customId.split('_')[3];
+    if (interaction.user.id !== allowedUserId) {
+      return interaction.reply({ content: 'Dont click 😭', ephemeral: true });
+    }
+
     const guildId = interaction.guild.id;
     
     // Get top 10 rarity droppers in this server
@@ -95,13 +106,13 @@ async function handleRarityButton(interaction) {
         .setTimestamp();
 
       const backButton = new ButtonBuilder()
-        .setCustomId('back_to_drops')
+        .setCustomId(`back_to_drops_${interaction.user.id}`)
         .setLabel('Back')
         .setStyle(ButtonStyle.Secondary)
         .setEmoji('⬅️');
 
       const resetButton = new ButtonBuilder()
-        .setCustomId('reset_drops')
+        .setCustomId(`reset_drops_${interaction.user.id}`)
         .setLabel('Reset')
         .setStyle(ButtonStyle.Danger)
         .setEmoji('🔄')
@@ -124,19 +135,26 @@ async function handleRarityButton(interaction) {
       })
       .setTitle('💎 Rarity Drop Leaderboard')
       .setColor(0xFFD700)
-      .setFooter({ text: `Total: ${totalLegendary} Legendary, ${totalExotic} Exotic` })
       .setTimestamp();
 
-    embed.addFields(
-      { name: 'S.No', value: topRarity.map((_, i) => `\`${i + 1}\``).join('\n\n'), inline: true },
-      { name: 'User', value: topRarity.map(u => `<@${u.userId}>`).join('\n\n'), inline: true },
-      { name: 'Exotic', value: topRarity.map(u => `\`${u.exotic_count}\``).join('\n\n'), inline: true },
-      { name: 'Legendary', value: topRarity.map(u => `\`${u.legendary_count}\``).join('\n\n'), inline: true }
-    );
+    let rankings = '`S.No` • <:exotic:1465638346670735410> • <:legendary:1465638343797903600> • `User`\n';
+    const maxExotic = Math.max(...topRarity.map(u => u.exotic_count));
+    const maxLegendary = Math.max(...topRarity.map(u => u.legendary_count));
+    const exoticWidth = Math.max(maxExotic.toString().length, 3);
+    const legendaryWidth = Math.max(maxLegendary.toString().length, 3);
+    for (let i = 0; i < topRarity.length; i++) {
+      const user = topRarity[i];
+      const rank = `${i + 1}]`.padEnd(4, ' ');
+      const exotic = user.exotic_count.toString().padStart(exoticWidth, ' ');
+      const legendary = user.legendary_count.toString().padStart(legendaryWidth, ' ');
+      rankings += `\`${rank}\` • \`${exotic}\` • \`${legendary}\` • <@${user.userId}>\n`;
+    }
+    embed.addFields({ name: '\u200b', value: rankings });
+    embed.setFooter({ text: `Total: ${totalExotic} Exotic | ${totalLegendary} Legendary` });
 
     // Add back button
     const backButton = new ButtonBuilder()
-      .setCustomId('back_to_drops')
+      .setCustomId(`back_to_drops_${interaction.user.id}`)
       .setLabel('Back')
       .setStyle(ButtonStyle.Secondary)
       .setEmoji('⬅️');
@@ -152,6 +170,11 @@ async function handleRarityButton(interaction) {
 
 async function handleBackButton(interaction) {
   try {
+    const allowedUserId = interaction.customId.split('_')[3];
+    if (interaction.user.id !== allowedUserId) {
+      return interaction.reply({ content: 'Dont click 😭', ephemeral: true });
+    }
+
     const guildId = interaction.guild.id;
     
     const topDroppers = await Drops.find({ guildId })
@@ -167,21 +190,25 @@ async function handleBackButton(interaction) {
         iconURL: interaction.guild.iconURL({ dynamic: true }) 
       })
       .setTitle('🎴 Drop Leaderboard')
-      .setColor(0x0099ff)
-      .setFooter({ text: `Total Drops: ${totalDrops}` })
-      .setTimestamp();
+      .setThumbnail('https://cdn.discordapp.com/attachments/1446564927983849593/1466067284530434181/image0.gif')
+      .setColor(0x0099ff);
 
-    embed.addFields(
-      { name: 'S.No', value: topDroppers.map((_, i) => `\`${i + 1}\``).join('\n\n'), inline: true },
-      { name: 'User', value: topDroppers.map(u => `<@${u.userId}>`).join('\n\n'), inline: true },
-      { name: 'Drops', value: topDroppers.map(u => `\`${u.drop_count}\``).join('\n\n'), inline: true }
-    );
+    let rankings = '`S.No` • `Drops` • `User`\n';
+    const maxDrops = Math.max(...topDroppers.map(u => u.drop_count));
+    const maxWidth = Math.max(maxDrops.toString().length, 5);
+    for (let i = 0; i < topDroppers.length; i++) {
+      const user = topDroppers[i];
+      const rank = `${i + 1}]`.padEnd(4, ' ');
+      const drops = user.drop_count.toString().padStart(maxWidth, ' ');
+      rankings += `\`${rank}\` • \`${drops}\` • <@${user.userId}>\n`;
+    }
+    embed.addFields({ name: '\u200b', value: rankings });
+    embed.setFooter({ text: `👥 Participants: ${allDrops.length} | 🎴 Total Drops: ${totalDrops}` });
 
     const button = new ButtonBuilder()
-      .setCustomId('view_rarity_drops')
+      .setCustomId(`view_rarity_drops_${interaction.user.id}`)
       .setLabel('Rare Drops')
-      .setStyle(ButtonStyle.Primary)
-      .setEmoji('💎');
+      .setStyle(ButtonStyle.Primary);
 
     const row = new ActionRowBuilder().addComponents(button);
 
@@ -194,6 +221,11 @@ async function handleBackButton(interaction) {
 
 async function handleResetButton(interaction) {
   try {
+    const allowedUserId = interaction.customId.split('_')[2];
+    if (interaction.user.id !== allowedUserId) {
+      return interaction.reply({ content: 'Dont click 😭', ephemeral: true });
+    }
+
     const BOT_OWNER_ID = process.env.BOT_OWNER_ID;
     
     // Only bot owner or admin can reset
