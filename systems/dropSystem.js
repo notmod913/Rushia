@@ -30,7 +30,7 @@ async function detectAndSetDropReminder(message) {
       channelId: message.channel.id,
       remindAt,
       type: 'drop',
-      reminderMessage: `<@${userId}>, You can now use </drop:1464548731549384900> again!`
+      reminderMessage: `<@${userId}>, You can now use </drop:1472170029905874977> again!`
     });
     
     await sendLog(`[DROP REMINDER SET] User: ${userId}, Channel: ${message.channel.id}, Message: ${message.url}`, {
