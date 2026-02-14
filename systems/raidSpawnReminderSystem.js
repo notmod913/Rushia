@@ -28,7 +28,7 @@ async function detectAndSetRaidSpawnReminder(message) {
       channelId: message.channel.id,
       remindAt,
       type: 'raidSpawn',
-      reminderMessage: `<@${userId}>, You can now use </raid spawn:1404667045332910220> to spawn a new raid boss!`
+      reminderMessage: `<@${userId}>, You can now use </raid spawn:1472170030723764364> to spawn a new raid boss!`
     });
     
     await sendLog(`[RAID SPAWN REMINDER SET] User: ${userId}, Channel: ${message.channel.id}, Message: ${message.url}`, {
