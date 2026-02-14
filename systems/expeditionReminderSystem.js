@@ -35,7 +35,7 @@ async function processExpeditionMessage(message) {
             channelId: message.channel.id,
             remindAt,
             type: 'expedition',
-            reminderMessage: `<@${userId}>, your expedition cards are ready to be claimed!\n-# Use </expeditions:1426499105936379922> to resend your expedition cards. `, 
+            reminderMessage: `<@${userId}>, your expedition cards are ready to be claimed!\n-# Use </expeditions:1472170030337626153> to resend your expedition cards. `, 
           });
           await sendLog(`[EXPEDITION REMINDER SET] User: ${userId}, Card: ${card.cardName} (${card.cardId}), Channel: ${message.channel.id}, Message ID: ${message.id}, Message Link: ${message.url}`);
         } catch (error) {
